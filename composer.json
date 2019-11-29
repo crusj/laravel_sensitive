@@ -8,6 +8,12 @@
       "email": "296769589@qq.com"
     }
   ],
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    }
+  },
   "autoload": {
     "psr-4": {
       "Crusj\\Sensitive\\": "./src"
