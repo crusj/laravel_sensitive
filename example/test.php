@@ -1,10 +1,9 @@
-# laravel_sensitive
-laravel敏感词过滤，支持单个词和必须同时存在的词组
+<?php
+/**
+ * author crusj
+ * date   2019/11/29 11:48 下午
+ */
 
-## install
-`composer require crusj/sensitive`
-## Example
-```php
 use Crusj\Sensitive\Sensitive;
 use Predis\Client;
 
@@ -37,4 +36,4 @@ array (size=2)
             0 => string '捌酒_最高领导人_装聋作哑' (length=35)
             1 => string '捌酒_最高领导人_真相' (length=29)
  */
-```
+

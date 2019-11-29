@@ -1,0 +1,22 @@
+{
+  "name": "crusj/sensitive",
+  "description": "敏感词过滤，支持单个词和必须同时存在的词组",
+  "license": "MIT",
+  "author": [
+    {
+      "name": "crusj",
+      "email": "296769589@qq.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Crusj\\Sensitive\\": "./src"
+    }
+  },
+  "require": {
+    "lustre/php-dfa-sensitive": "^1.4",
+    "predis/predis": "^1.1",
+    "php": ">=7.3"
+  },
+  "minimum-stability": "dev"
+}
