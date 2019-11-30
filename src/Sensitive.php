@@ -36,7 +36,7 @@ class Sensitive
     /**
      * @var array
      */
-    private $delimiter = [',', '，', '_', '-','+'];
+    private $delimiter = [',', '，', '_', '-', '+'];
 
     public function __construct(Client $PredisClient, array &$sensitiveWords = [], string $content = "", array $delimiter = [])
     {
@@ -48,6 +48,11 @@ class Sensitive
         if (!empty($delimiter)) {
             $this->delimiter = $delimiter;
         }
+    }
+
+    public function isSetSensitiveWords(): bool
+    {
+        return $this->redis->setNum('sensitive_single_word') || $this->redis->setNum('sensitive_combine_words');
     }
 
     /**
@@ -114,7 +119,7 @@ class Sensitive
             if (!empty($words)) {
                 foreach ($words as $word) {
                     if (isset($sensitiveKinds[$key][$word])) {
-                        array_push($combineBadWords,$word);
+                        array_push($combineBadWords, $word);
                     }
                 }
             }

@@ -34,7 +34,12 @@ class Redis
 
     public function setGetAll(string $key): array
     {
-        return $this->client->executeRaw(['SMEMBERS', $key])??[];
+        return $this->client->executeRaw(['SMEMBERS', $key]) ?? [];
+    }
+
+    public function setNum(string $key): int
+    {
+        return intval($this->client->executeRaw(['SCARD',$key]));
     }
 
 }
